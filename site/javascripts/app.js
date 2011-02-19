@@ -3,14 +3,19 @@ define('app',['flock','bird','models/player'],function(Flock,Bird,Player) {
     routes: {
       '': 'main'
     },
+    initialize: function() {
+    },
     main: function() {
-      alert('on main')
-      var flock = new Backbone.Collection()
+      var flock = new Backbone.Collection();
       ['Blah Mah','Blah Mah','Blah Mah'].forEach(function(name) {
         flock.add(new Player({
           name: name
         }))
       })
+      var flockView = new Flock({
+        collection: flock
+      }).render()
+      $('body').append(flockView.el)
     }
   })
   return App
