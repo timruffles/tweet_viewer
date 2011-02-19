@@ -3,7 +3,7 @@
   %head
     %title FWT
     %link{:rel=>"stylesheet",:type=>"text/css",:href=>"http://yui.yahooapis.com/2.8.2r1/build/base/base-min.css"}
-    = stylesheets
+    = stylesheets('screen')
     = javascripts *(['req-jq','req-config','underscore','backbone'] + (Dir.glob(@staticmatic.base_dir + '/site/**/*.js').map {|f| f.gsub(/.*\/site\/javascripts\/(.*)\.js/,'\1')})).uniq!
 
   %body
